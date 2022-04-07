@@ -38,8 +38,8 @@
       </section>
 
       <div class="cards">
-        <div v-for="country in getFilteredCountries" class="card card-{country.name}">
-          <img class="flag" :src="country.flag" alt="${country.name} flag" />
+        <div v-for="country in getFilteredCountries" :key="country.alpha3Code" class="card">
+          <img class="flag" :src="country.flag" :alt="country.name" />
           <div class="content">
             <h3 class="name">{{country.name}}</h3>
             <div><span class="country-info">Population: </span><span class="population">{{country.population}}</span>
@@ -55,7 +55,7 @@
     </div>
   </main>
   <script src="https://unpkg.com/vue@3"></script>
-  <script src="main.js"></script>
+  <script src="solution-vue.js"></script>
 </body>
 
 </html>
